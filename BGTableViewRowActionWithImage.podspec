@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.homepage         = "https://github.com/benguild/BGTableViewRowActionWithImage"
   s.screenshots      = "https://raw.github.com/benguild/BGTableViewRowActionWithImage/master/demo.jpg"
-  s.summary          = "A variation on the iOS 8.0+ `UITableViewRowAction` to support icons with text underneath, similar to the iOS 9 Mail application and various third-party applications as well."
+  s.summary          = "A variation on the iOS 8.0+ `UITableViewRowAction` to support icons with text underneath."
   s.license          = 'MIT'
   s.author           = { "Ben Guild" => "email@benguild.com" }
   s.source           = { :git => "https://github.com/benguild/BGTableViewRowActionWithImage.git", :tag => s.version.to_s }
