@@ -16,6 +16,10 @@ This isn't ideal, but it works until this becomes a built-in property for UITabl
 
 ```
 
+## Demo
+
+![Example screenshot](https://raw.github.com/benguild/BGTableViewRowActionWithImage/master/demo.jpg "Example screenshot")
+
 ## Installation
 
 BGTableViewRowActionWithImage is available through [CocoaPods](http://cocoapods.org). To install
@@ -27,7 +31,7 @@ pod "BGTableViewRowActionWithImage"
 
 ## Author
 
-Ben Guild, benguild@users.noreply.github.com
+Ben Guild, email@benguild.com
 
 ## License
 
