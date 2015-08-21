@@ -16,6 +16,8 @@ This isn't ideal, but it works until this becomes a built-in property for UITabl
 
 ```
 
+Use this constructor **only** to configure the row action. Manually setting the `backgroundColor` will probably result in unexpected behavior.
+
 ## Demo
 
 ![Example screenshot](https://raw.github.com/benguild/BGTableViewRowActionWithImage/master/demo.jpg "Example screenshot")
