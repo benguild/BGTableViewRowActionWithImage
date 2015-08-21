@@ -4,7 +4,6 @@ A variation on the iOS 8.0+ `UITableViewRowAction` to support icons with text un
 
 This isn't ideal, but it works until this becomes a built-in property for UITableViewRowAction.
 
-[![CI Status](http://img.shields.io/travis/Ben Guild/BGTableViewRowActionWithImage.svg?style=flat)](https://travis-ci.org/Ben Guild/BGTableViewRowActionWithImage)
 [![Version](https://img.shields.io/cocoapods/v/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![License](https://img.shields.io/cocoapods/l/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![Platform](https://img.shields.io/cocoapods/p/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
