@@ -1,6 +1,6 @@
 # BGTableViewRowActionWithImage
 
-A variation on the iOS 8.0+ `UITableViewRowAction` to support icons with text underneath, similar to the iOS 9 Mail application and various third-party applications as well.
+A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications as well.
 
 This isn't ideal, but it works until this becomes a built-in property for UITableViewRowAction.
 

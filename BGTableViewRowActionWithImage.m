@@ -20,7 +20,7 @@
 
 + (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
 {
-    NSString *titleSpaceString=[@"" stringByPaddingToLength:[title length]*(fontSize_actuallyUsedUnderImage/fontSize_actuallyUsedUnderImage) withString:@"\u2007" startingAtIndex:0]; // This isn't exact, but it's close enough in most instances? I tested with full-width characters and it accounted for those pretty well.
+    NSString *titleSpaceString=[@"" stringByPaddingToLength:[title length]*(fontSize_actuallyUsedUnderImage/fontSize_iOS8AndUpDefault) withString:@"\u3000" startingAtIndex:0]; // This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounted for those pretty well.
     
     BGTableViewRowActionWithImage *rowAction=(BGTableViewRowActionWithImage *)[self rowActionWithStyle:style title:titleSpaceString handler:handler];
     
