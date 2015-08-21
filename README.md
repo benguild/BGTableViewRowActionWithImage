@@ -1,5 +1,9 @@
 # BGTableViewRowActionWithImage
 
+A variation on the iOS 8.0+ `UITableViewRowAction` to support icons with text underneath, similar to the iOS 9 Mail application and various third-party applications as well.
+
+This isn't ideal, but it works until this becomes a built-in property for UITableViewRowAction.
+
 [![CI Status](http://img.shields.io/travis/Ben Guild/BGTableViewRowActionWithImage.svg?style=flat)](https://travis-ci.org/Ben Guild/BGTableViewRowActionWithImage)
 [![Version](https://img.shields.io/cocoapods/v/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![License](https://img.shields.io/cocoapods/l/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
@@ -7,9 +11,10 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```objc
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
 
-## Requirements
+```
 
 ## Installation
 
