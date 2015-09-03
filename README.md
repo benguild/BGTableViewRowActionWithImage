@@ -1,6 +1,6 @@
 # BGTableViewRowActionWithImage
 
-A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications as well.
+A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications.
 
 **The implementation isn't ideal,** but it works. Until this becomes a built-in property for `UITableViewRowAction`, please feel free to contribute any improvements or compatibility tweaks as you see fit.
 
