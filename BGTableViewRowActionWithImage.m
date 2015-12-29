@@ -20,7 +20,7 @@
 
 + (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
 {
-    [self rowActionWithStyle:style title:title backgroundColor:backgroundColor image:image forCellHeight:cellHeight handler:handler];
+    return [self rowActionWithStyle:style title:title titleColor:[UIColor whiteColor] backgroundColor:backgroundColor image:image forCellHeight:cellHeight handler:handler];
     
 }
 
