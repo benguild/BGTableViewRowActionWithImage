@@ -18,6 +18,12 @@
 
 @implementation BGTableViewRowActionWithImage
 
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
+{
+    [self rowActionWithStyle:style title:title backgroundColor:backgroundColor image:image forCellHeight:cellHeight handler:handler];
+    
+}
+
 + (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title titleColor:(UIColor *)titleColor backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
 {
     NSString *titleSpaceString=[@"" stringByPaddingToLength:[title length]*(fontSize_actuallyUsedUnderImage/fontSize_iOS8AndUpDefault)/1.1f withString:@"\u3000" startingAtIndex:0]; // This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounts for those pretty well.
