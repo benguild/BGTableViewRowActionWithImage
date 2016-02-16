@@ -36,4 +36,4 @@ Ben Guild, email@benguild.com
 
 ## License
 
-BGTableViewRowActionWithImage is available under the MIT license. See the LICENSE file for more info.
+`BGTableViewRowActionWithImage` is available under the MIT license. See the LICENSE file for more info.
