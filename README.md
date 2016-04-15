@@ -23,7 +23,7 @@ Use this constructor **only** to configure the row action. Manually setting the 
 
 ## Installation
 
-BGTableViewRowActionWithImage is available through [CocoaPods](http://cocoapods.org). To install
+`BGTableViewRowActionWithImage` is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
