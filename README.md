@@ -11,8 +11,39 @@ A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text b
 ## Usage
 
 ```objc
-+ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight andFittedWidth:(BOOL)isWidthFitted handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
+// Regular width
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style
+                             title:(NSString *)title
+                   backgroundColor:(UIColor *)backgroundColor
+                             image:(UIImage *)image
+                     forCellHeight:(NSUInteger)cellHeight
+                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
 
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style
+                             title:(NSString *)title
+                        titleColor:(UIColor *)titleColor
+                   backgroundColor:(UIColor *)backgroundColor
+                             image:(UIImage *)image
+                     forCellHeight:(NSUInteger)cellHeight
+                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
+
+// Optional fitted width (ideal when using 3 or more cells in smaller tables)
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style
+                             title:(NSString *)title
+                   backgroundColor:(UIColor *)backgroundColor
+                             image:(UIImage *)image
+                     forCellHeight:(NSUInteger)cellHeight
+                    andFittedWidth:(BOOL)isWidthFitted
+                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
+
++ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style
+                             title:(NSString *)title
+                        titleColor:(UIColor *)titleColor
+                   backgroundColor:(UIColor *)backgroundColor
+                             image:(UIImage *)image
+                     forCellHeight:(NSUInteger)cellHeight
+                    andFittedWidth:(BOOL)isWidthFitted
+                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
 ```
 
 Use this constructor **only** to configure the row action. Manually setting the `backgroundColor` will probably result in unexpected behavior.
