@@ -1,8 +1,8 @@
 # BGTableViewRowActionWithImage
 
-A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications.
+A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications. We're all secretly hoping that Apple will implement this functionality with a native, public API in iOS 10 or 11.
 
-**The implementation isn't ideal,** but it works. Until this becomes a built-in property for `UITableViewRowAction`, please feel free to contribute any improvements or compatibility tweaks as you see fit.
+**This current implementation isn't ideal,** but it works. Until it becomes a built-in property for `UITableViewRowAction`, please feel free to contribute any improvements or compatibility tweaks as you see fit.
 
 [![Version](https://img.shields.io/cocoapods/v/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![License](https://img.shields.io/cocoapods/l/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
@@ -46,7 +46,7 @@ A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text b
                            handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
 ```
 
-Use this constructor **only** to configure the row action. Manually setting the `backgroundColor` will probably result in unexpected behavior.
+Use **one** of these constructors **only** to configure each row action, depending on your needs. Manually setting the `backgroundColor` property of a row action after calling a constructor will probably result in unexpected behavior, and should be avoided.
 
 ## Demo
 
