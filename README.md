@@ -60,7 +60,7 @@ import BGTableViewRowActionWithImage
 BGTableViewRowActionWithImage.rowActionWithStyle(/* see above for parameters... */)
 ```
 
-See "Objective-C Usage" above for parameter configurations and **other important notes**.
+See *"Objective-C Usage"* above for parameter configurations and **other important notes**.
 
 ## Demo
 
