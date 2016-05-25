@@ -8,7 +8,7 @@ A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text b
 [![License](https://img.shields.io/cocoapods/l/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![Platform](https://img.shields.io/cocoapods/p/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 
-## Usage
+## Objective-C Usage
 
 ```objc
 // Regular width
@@ -47,6 +47,20 @@ A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text b
 ```
 
 Use **one** of these constructors **only** to configure each row action, depending on your needs. Manually setting the `backgroundColor` property of a row action after calling a constructor will probably result in unexpected behavior, and should be avoided.
+
+## Swift
+
+For **Swift**, the syntax changes slightly:
+
+```swift
+// In your imports:
+import BGTableViewRowActionWithImage
+
+// In your code:
+BGTableViewRowActionWithImage.rowActionWithStyle(/* see above for parameters... */)
+```
+
+See "Objective-C Usage" above for parameter configurations and **other important notes**.
 
 ## Demo
 
