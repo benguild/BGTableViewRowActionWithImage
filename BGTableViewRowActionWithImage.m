@@ -16,6 +16,7 @@
 #define margin_vertical_betweenTextAndImage (cellHeight>=64.0f ? 3.0f : 2.0f)
 
 #define fittingMultiplier 0.40f
+#define imagePaddingHorizontal 20.0
 
 @implementation BGTableViewRowActionWithImage
 
@@ -57,12 +58,23 @@
 
 + (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style title:(NSString *)title titleColor:(UIColor *)titleColor backgroundColor:(UIColor *)backgroundColor image:(UIImage *)image forCellHeight:(NSUInteger)cellHeight andFittedWidth:(BOOL)isWidthFitted handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
 {
+    
+    if (title==nil && image!=nil) {
+        CGFloat emptySpaceWidth=[@"\u3000" boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_actuallyUsedUnderImage] } context:nil].size.width;
+        
+        CGFloat number=ceil((imagePaddingHorizontal+image.size.width+imagePaddingHorizontal)/emptySpaceWidth);
+        title=[@"" stringByPaddingToLength:number withString:@"\u3000" startingAtIndex:0];
+    }
+    
     float titleMultiplier = isWidthFitted ? fittingMultiplier : (fontSize_actuallyUsedUnderImage/fontSize_iOS8AndUpDefault)/1.1f; // This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounts for those pretty well.
-
+    
     NSString *titleSpaceString= [@"" stringByPaddingToLength:[title length]*titleMultiplier withString:@"\u3000" startingAtIndex:0];
     BGTableViewRowActionWithImage *rowAction=(BGTableViewRowActionWithImage *)[self rowActionWithStyle:style title:titleSpaceString handler:handler];
     
-    CGSize frameGuess=CGSizeMake((margin_horizontal_iOS8AndUp*2)+[titleSpaceString boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_iOS8AndUpDefault] } context:nil].size.width, cellHeight);
+    CGFloat contentWidth=[titleSpaceString boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_iOS8AndUpDefault] } context:nil].size.width;
+    
+    CGSize frameGuess=CGSizeMake((margin_horizontal_iOS8AndUp*2)+contentWidth, cellHeight);
+    
     
     CGSize tripleFrame=CGSizeMake(frameGuess.width*3.0f, frameGuess.height*3.0f);
     
@@ -74,7 +86,12 @@
     
     CGSize drawnTextSize=[title boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_actuallyUsedUnderImage] } context:nil].size;
     
-    [image drawAtPoint:CGPointMake((frameGuess.width/2.0f)-([image size].width/2.0f), (frameGuess.height/2.0f)-[image size].height-(margin_vertical_betweenTextAndImage/2.0f)+2.0f)];
+    CGFloat imageInsetVertical = [image size].height/2.0;
+    if ([title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
+        imageInsetVertical=[image size].height-(margin_vertical_betweenTextAndImage/2.0f)+2.0f;
+    }
+    
+    [image drawAtPoint:CGPointMake((frameGuess.width/2.0f)-([image size].width/2.0f), (frameGuess.height/2.0f)-imageInsetVertical)];
     [title drawInRect:CGRectMake(((frameGuess.width/2.0f)-(drawnTextSize.width/2.0f))*([[UIApplication sharedApplication] userInterfaceLayoutDirection]==UIUserInterfaceLayoutDirectionRightToLeft ? -1 : 1), (frameGuess.height/2.0f)+(margin_vertical_betweenTextAndImage/2.0f)+2.0f, frameGuess.width, frameGuess.height) withAttributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_actuallyUsedUnderImage], NSForegroundColorAttributeName: titleColor }];
     
     [rowAction setBackgroundColor:[UIColor colorWithPatternImage:UIGraphicsGetImageFromCurrentImageContext()]];
