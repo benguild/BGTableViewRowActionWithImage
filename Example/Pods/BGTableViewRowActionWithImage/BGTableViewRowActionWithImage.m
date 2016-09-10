@@ -67,7 +67,7 @@
     }
     
     float titleMultiplier = isWidthFitted ? fittingMultiplier : (fontSize_actuallyUsedUnderImage/fontSize_iOS8AndUpDefault)/1.1f; // This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounts for those pretty well.
-    
+
     NSString *titleSpaceString= [@"" stringByPaddingToLength:[title length]*titleMultiplier withString:@"\u3000" startingAtIndex:0];
     BGTableViewRowActionWithImage *rowAction=(BGTableViewRowActionWithImage *)[self rowActionWithStyle:style title:titleSpaceString handler:handler];
     

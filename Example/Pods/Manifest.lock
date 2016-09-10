@@ -1,0 +1,16 @@
+PODS:
+  - BGTableViewRowActionWithImage (0.3.5)
+
+DEPENDENCIES:
+  - BGTableViewRowActionWithImage (from `../BGTableViewRowActionWithImage.podspec`)
+
+EXTERNAL SOURCES:
+  BGTableViewRowActionWithImage:
+    :path: "../BGTableViewRowActionWithImage.podspec"
+
+SPEC CHECKSUMS:
+  BGTableViewRowActionWithImage: 4871f575342221f67645ec937e4db2a7258ed47c
+
+PODFILE CHECKSUM: 9f9a7b32a6a90dd2fc40dddb8d54dab547d8e6ff
+
+COCOAPODS: 1.0.1
