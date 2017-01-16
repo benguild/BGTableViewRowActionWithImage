@@ -18,6 +18,20 @@
 #define fittingMultiplier 0.40f
 #define imagePaddingHorizontal 20.0
 
+@implementation NSString (multiLine)
+
+- (NSInteger)maxLengthByLine
+{
+    NSArray *lines = [self componentsSeparatedByString:@"\n"];
+    NSInteger length = 0;
+    for (NSString *line in lines) {
+        length = MAX(length, line.length);
+    }
+    return length;
+}
+
+@end
+
 @implementation BGTableViewRowActionWithImage
 
 #pragma mark - Derived constructors
@@ -68,7 +82,7 @@
     
     float titleMultiplier = isWidthFitted ? fittingMultiplier : (fontSize_actuallyUsedUnderImage/fontSize_iOS8AndUpDefault)/1.1f; // This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounts for those pretty well.
     
-    NSString *titleSpaceString= [@"" stringByPaddingToLength:[title length]*titleMultiplier withString:@"\u3000" startingAtIndex:0];
+    NSString *titleSpaceString= [@"" stringByPaddingToLength:[title maxLengthByLine]*titleMultiplier withString:@"\u3000" startingAtIndex:0];
     BGTableViewRowActionWithImage *rowAction=(BGTableViewRowActionWithImage *)[self rowActionWithStyle:style title:titleSpaceString handler:handler];
     
     CGFloat contentWidth=[titleSpaceString boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_iOS8AndUpDefault] } context:nil].size.width;
