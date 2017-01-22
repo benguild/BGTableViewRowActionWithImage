@@ -86,9 +86,12 @@
     
     CGSize drawnTextSize=[title boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_actuallyUsedUnderImage] } context:nil].size;
     
-    CGFloat imageInsetVertical = [image size].height/2.0;
-    if ([title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
+    CGFloat imageInsetVertical=([image size].height/2.0);
+    
+    if ([[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length])
+    {
         imageInsetVertical=([image size].height+margin_vertical_betweenTextAndImage+drawnTextSize.height)/2.0f;
+        
     }
     
     [image drawAtPoint:CGPointMake((frameGuess.width/2.0f)-([image size].width/2.0f), (frameGuess.height/2.0f)-imageInsetVertical)];
