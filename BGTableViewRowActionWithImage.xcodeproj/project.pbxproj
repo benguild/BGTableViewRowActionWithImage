@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		737EC80C1F17413A000AB412 /* BGTableViewRowActionWithImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 737EC8091F17413A000AB412 /* BGTableViewRowActionWithImage.h */; };
+		737EC80C1F17413A000AB412 /* BGTableViewRowActionWithImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 737EC8091F17413A000AB412 /* BGTableViewRowActionWithImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		737EC80D1F17413A000AB412 /* BGTableViewRowActionWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 737EC80A1F17413A000AB412 /* BGTableViewRowActionWithImage.m */; };
 /* End PBXBuildFile section */
 
