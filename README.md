@@ -8,7 +8,7 @@
 
 A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications. We're all secretly hoping that Apple will implement this functionality with a native, public API in a future iOS update.
 
-**This iOS 8/9/10 (and below?) implementation isn't ideal,** but it works. In iOS 11 and later, you MUST use Apple's built-in `UIContextualAction` instead! This library will still work in its default configuration, but is no longer supported.
+**This iOS 8-10 implementation isn't ideal,** but it works. In iOS 11 and later, you MUST use Apple's built-in `UIContextualAction` instead! This library may still work for you in its default configuration, but is no longer supported by iOS 11 and later.
 
 [![Version](https://img.shields.io/cocoapods/v/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
 [![License](https://img.shields.io/cocoapods/l/BGTableViewRowActionWithImage.svg?style=flat)](http://cocoapods.org/pods/BGTableViewRowActionWithImage)
