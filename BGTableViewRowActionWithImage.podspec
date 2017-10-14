@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = "BGTableViewRowActionWithImage"
-  s.version          = "0.4.1"
+  s.version          = "0.4.2"
   s.homepage         = "https://github.com/benguild/BGTableViewRowActionWithImage"
   s.screenshots      = "https://raw.github.com/benguild/BGTableViewRowActionWithImage/master/demo.jpg"
-  s.summary          = "A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below."
+  s.summary          = "A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. — No longer necessary or fully-supported in iOS 11. (and above)"
   s.license          = 'MIT'
   s.author           = { "Ben Guild" => "email@benguild.com", "Tom Kraina" => "me@tomkraina.com" }
   s.source           = { :git => "https://github.com/benguild/BGTableViewRowActionWithImage.git", :tag => s.version.to_s }
