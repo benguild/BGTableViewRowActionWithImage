@@ -3,7 +3,7 @@
 //  BGTableViewRowActionWithImage
 //
 //  Created by Ben Guild on 8/20/15.
-//  Copyright (c) 2015 Ben Guild. All rights reserved.
+//  Copyright (c) 2015-2017 Ben Guild. All rights reserved.
 //
 
 #import "BGTableViewRowActionWithImage.h"
@@ -27,7 +27,7 @@
                    backgroundColor:(UIColor *)backgroundColor
                              image:(UIImage *)image
                      forCellHeight:(NSUInteger)cellHeight
-                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler;
+                           handler:(void (^)(UITableViewRowAction *, NSIndexPath *))handler
 {
     return [self rowActionWithStyle:style title:title titleColor:[UIColor whiteColor] backgroundColor:backgroundColor image:image forCellHeight:cellHeight andFittedWidth:NO handler:handler];
 }
