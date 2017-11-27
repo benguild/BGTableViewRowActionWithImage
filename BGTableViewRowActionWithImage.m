@@ -83,7 +83,7 @@
     
     CGFloat contentWidth=[titleSpaceString boundingRectWithSize:CGSizeMake(MAXFLOAT, cellHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_iOS8AndUpDefault] } context:nil].size.width;
     
-    CGSize frameGuess=CGSizeMake((margin_horizontal_iOS8AndUp*2)+contentWidth, cellHeight);
+    CGSize frameGuess=CGSizeMake(ceilf((margin_horizontal_iOS8AndUp*2)+contentWidth), ceilf(cellHeight));
     
     CGSize tripleFrame=CGSizeMake(frameGuess.width*3.0f, frameGuess.height*3.0f);
     
