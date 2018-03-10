@@ -4,6 +4,8 @@
 
 > **For iOS 11 and above,** you MUST use this. ⬆️
 
+**NOTE:** This project is no longer being maintained by the author as of March 2018.
+
 --------
 
 A variation on the iOS 8.0+ `UITableViewRowAction` to support icons, with text below. Similar to the iOS 9 Mail application and various third-party applications. We're all secretly hoping that Apple will implement this functionality with a native, public API in a future iOS update.
