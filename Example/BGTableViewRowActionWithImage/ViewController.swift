@@ -9,61 +9,37 @@
 import UIKit
 import BGTableViewRowActionWithImage
 
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
     @IBOutlet weak var tableView: UITableView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         tableView.rowHeight = 80
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - <UITableViewDataSource>
 
-
-    
-    // MARK: UITableViewDataSource
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 10
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
-        let identifier = "Identifier"
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
-        
-        return cell
-        
+        return tableView.dequeueReusableCellWithIdentifier("identifier", forIndexPath: indexPath)
     }
-    
-    // MARK: UITableViewDelegate
-    
+
+    // MARK: - <UITableViewDelegate>
+
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        
-        let image = UIImage(named: "star")
-        let title: String? = indexPath.row%2==0 ? "action" : nil
-        let cellHeight = UInt(tableView.rowHeight)
-        
-        let action = BGTableViewRowActionWithImage.rowActionWithStyle(UITableViewRowActionStyle.Default, title: title, backgroundColor: .lightGrayColor(), image: image, forCellHeight: cellHeight) { (action, indexPath) in
-        
-            
+        let action = BGTableViewRowActionWithImage.rowActionWithStyle(
+            UITableViewRowActionStyle.Default,
+            title: ((indexPath.row % 2) == 0 ? "action" : nil),
+            backgroundColor: .lightGrayColor(),
+            image: UIImage(named: "star"),
+            forCellHeight: UInt(tableView.rowHeight),
+        ) { (action, indexPath) in
             print("Selected action on indexPath=\(indexPath.section)/\(indexPath.row)")
         }
-        
-        return [action]
-    
-    }
-    
-}
 
+        return [action]
+    }
+}
