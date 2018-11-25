@@ -1,10 +1,8 @@
 # BGTableViewRowActionWithImage
 
-**NOTE:** This project is no longer being maintained by the author as of March 2018.
+**NOTE:** This project is and always was kind of a hack 🤷🏼‍♂️, and is no longer being maintained by the author as of March 2018 now that Apple has given us **`UIContextualAction`** in iOS 11: https://developer.apple.com/documentation/uikit/uicontextualaction
 
-**UPDATE:** Finally, Apple has given us `UIContextualAction` in iOS 11: https://developer.apple.com/documentation/uikit/uicontextualaction
-
-> **For iOS 11 and above,** you MUST use this. ⬆️
+_**For iOS 11 and above,** you MUST use this instead!_ ⬆️
 
 --------
 
