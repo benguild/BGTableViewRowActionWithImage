@@ -101,12 +101,12 @@
 
     [title enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
         titleMaximumLineLength = MAX(titleMaximumLineLength, [line length]);
-    } ];
+    }];
 
     float titleMultiplier = (isWidthFitted ? fittingMultiplier : (fontSize_actuallyUsedUnderImage / fontSize_iOS8AndUpDefault) / 1.1f);
     // NOTE: This isn't exact, but it's close enough in most instances? I tested with full-width Asian characters and it accounts for those pretty well.
 
-    NSString *titleSpaceString = [@"" stringByPaddingToLength:titleMaximumLineLength*titleMultiplier
+    NSString *titleSpaceString = [@"" stringByPaddingToLength:(titleMaximumLineLength * titleMultiplier)
                                                  withString:@"\u3000"
                                             startingAtIndex:0];
 
@@ -119,7 +119,7 @@
                                                        attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:fontSize_iOS8AndUpDefault] }
                                                           context:nil].size.width;
 
-    CGSize frameGuess = CGSizeMake(ceilf((margin_horizontal_iOS8AndUp*2) + contentWidth), ceilf(cellHeight));
+    CGSize frameGuess = CGSizeMake(ceilf((margin_horizontal_iOS8AndUp * 2) + contentWidth), ceilf(cellHeight));
 
     CGSize tripleFrame = CGSizeMake(frameGuess.width * 3.0f, frameGuess.height * 3.0f);
 
@@ -143,7 +143,9 @@
     [image drawAtPoint:CGPointMake((frameGuess.width / 2.0f) - ([image size].width / 2.0f),
                                    (frameGuess.height / 2.0f) - imageInsetVertical)];
 
-    [title drawInRect:CGRectMake(((frameGuess.width / 2.0f) - (drawnTextSize.width / 2.0f)) * ([[UIApplication sharedApplication] userInterfaceLayoutDirection] == UIUserInterfaceLayoutDirectionRightToLeft ? -1 : 1),
+    [title drawInRect:CGRectMake(((frameGuess.width / 2.0f) -
+                                  (drawnTextSize.width / 2.0f)) *
+                                 ([[UIApplication sharedApplication] userInterfaceLayoutDirection] == UIUserInterfaceLayoutDirectionRightToLeft ? -1 : 1),
                                  (frameGuess.height / 2.0f) - imageInsetVertical + [image size].height + margin_vertical_betweenTextAndImage,
                                  frameGuess.width,
                                  frameGuess.height)
